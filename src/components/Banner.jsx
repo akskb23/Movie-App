@@ -3,9 +3,10 @@ import axios from "axios";
 const Banner = () => {
     const [bannerImage , setBannerImage] = useState("");
     const [title , setTitle] = useState("")
+    const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
     useEffect (() => {
-        axios.get("https://api.themoviedb.org/3/trending/movie/day?api_key=468d57421578b9e7e18d0a04075fe82b&language=en-US&page=1")
+        axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}&language=en-US&page=1`)
         .then((response) => {
             console.log( "Films", response.data.results[0]);
             const firstMovie = response.data.results[0];

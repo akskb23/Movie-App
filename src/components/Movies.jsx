@@ -9,10 +9,11 @@ const Movies = () => {
     const [movies, setMovies] = useState([])
     const [pageNo, setPageNo] = useState(1);
     const {watchList,addToWatchList, removeFromWatchList} = useContext(WatchListContext);
+    const apiKey = process.env.REACT_APP_TMDB_API_KEY;
    
     
     useEffect (() => {
-        axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=468d57421578b9e7e18d0a04075fe82b&language=en-US&page=${pageNo}`)
+        axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}&language=en-US&page=${pageNo}`)
         .then((response) => {
             console.log("Films", response.data.results);
             setMovies(response.data.results);
