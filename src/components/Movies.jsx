@@ -9,7 +9,7 @@ const Movies = () => {
     const [movies, setMovies] = useState([])
     const [pageNo, setPageNo] = useState(1);
     const {watchList,addToWatchList, removeFromWatchList} = useContext(WatchListContext);
-    const apiKey = process.env.REACT_APP_TMDB_API_KEY;
+    const apiKey = process.env.TMDB_API_KEY;
    
     
     useEffect (() => {

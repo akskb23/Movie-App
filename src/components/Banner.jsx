@@ -3,7 +3,7 @@ import axios from "axios";
 const Banner = () => {
     const [bannerImage , setBannerImage] = useState("");
     const [title , setTitle] = useState("")
-    const apiKey = process.env.REACT_APP_TMDB_API_KEY;
+    const apiKey = process.env.TMDB_API_KEY;
 
     useEffect (() => {
         axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}&language=en-US&page=1`)
